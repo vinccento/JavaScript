@@ -17,12 +17,13 @@ var controlador =  {
     },
     
     navegar : function(pantallaDestino) {
-        $('.activa')
-            //.removeClass('activa')
-            .fadeOut();
-        pantallaDestino
-            //.addClass('activa');
-            .fadeIn();
+        $('.activa').fadeOut(function() {
+            pantallaDestino.fadeIn(function() {
+                $('.activa').removeClass('activa');
+                pantallaDestino.addClass('activa');
+            });
+        });
+        
     },
     
     
