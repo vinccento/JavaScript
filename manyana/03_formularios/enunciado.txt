@@ -1,0 +1,16 @@
+Nombre 
+Apellidos
+username  (min 8)
+email
+Fecha nacimiento (opcional)
+Teléfono (opcional)
+H/M
+Profesión (desplegable)
+NIF (pattern)
+Contraseña (*****, min 8, pattern forzar 1 cifra)
+Perfil (min 10)
+Altura (rango)
+Peso
+
+Cancelar
+Aceptar

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button>
+        Púlsame.        
+        <img src="http://lorempixel.com/50/50/cats">
+    </button>
+    
+    <script>
+    
+        var boton = document.querySelector('button');
+        
+        boton.addEventListener('click', function() {
+            alert('Ey sexy!');
+            console.log('ey sexy!', this);
+        },true);
+        boton.addEventListener('click', function() {
+            alert('So sexy for my body!');
+        },true);
+        
+        document.addEventListener('click',function() {
+            alert('Like a viiiiiirgin.'); 
+            console.log('like a virgin.', this);
+        },true);
+        
+    </script>
+    
+    
+    
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Document</title>
+    <style>
+
+        @media (-webkit-max-device-pixel-ratio: 1.5), 
+               (max-resolution: 144dpi) { 
+            #gato {
+                width : 360px;
+                height: 200px;
+                background-image: url('http://lorempixel.com/360/200/abstract/2');   
+            }
+        }
+}
+        
+        @media (-webkit-min-device-pixel-ratio: 1.5), 
+               (min-resolution: 144dpi) { 
+            #gato {
+                width : 360px;
+                height: 200px;
+                background-image: url('http://lorempixel.com/720/400/abstract/2');   
+            }
+        }
+    
+    
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <img id="gato"
+        src="http://1x1px.me/FF4D00-0.5.png" alt="gatico"  class="responsive">
+        
+        
+    </div>
+</body>
+</html>

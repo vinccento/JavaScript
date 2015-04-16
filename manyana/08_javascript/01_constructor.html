@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Mira el depurador.</h1>
+    <script>
+        
+
+var SuperHeroe = function(nombre, fuerza, vuela, rx) {
+    this.nombre = nombre;
+    this.fuerza = fuerza;
+    this.vuela = vuela;
+    this.rayosx = rx;
+    this.hablar = window.hablar;
+};
+
+var hablar = function(mensaje) {
+    console.log('%s dice %s.', this.nombre, mensaje);
+};
+         
+var lobezno = new SuperHeroe('Lobezno', 50, false, false);
+lobezno.hablar('Dónde está la cerveza?');        
+        
+var ironman = new SuperHeroe('Ironman',80,true,false);
+ironman.hablar('Dame whisky');        
+        
+    
+    </script>
+</body>
+</html>
+
+
+
+

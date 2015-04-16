@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+var Camiseta = function(modelo, talla, color, precio) {
+    this.modelo = modelo;
+    this.talla = talla;
+    this.color = color;
+    this.precio = precio;    
+};
+
+var Carrito = function(direccion) {
+    this.direccion = direccion;
+    this.productos = [];
+    this.calcularCosteTotal = cct;
+};
+
+var cct = function() {
+    var total = 0;
+    for (var i=0; i<this.productos.length; i++) {
+        total = total + this.productos[i].precio;
+    }
+    return total;
+};
+
+var c1 = new Camiseta('T@RD1S', 'S', 'Rojo', 10.0);
+var c2 = new Camiseta('The War Doctor', 'S', 'Negra', 10.0);
+
+var carrito = new Carrito(null);
+carrito.productos.push(c1);
+carrito.productos.push(c2);
+
+console.log('Coste total:',
+            carrito.calcularCosteTotal());
+    
+    
+    
+    
+    
+
+</script>
+    
+</body>
+</html>

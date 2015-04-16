@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+var Producto = 
+    function(nombre, baseImponible, tipoIva) {
+        this.nombre = nombre;
+        this.baseImponible = baseImponible;
+        this.tipoIva = tipoIva;
+    };
+
+var Linea = 
+    function(producto, cantidad, descuento) {
+        this.producto = producto;
+        this.cantidad = cantidad;
+        this.descuento = descuento;
+        this.subtotal = calcularSubtotal;
+    };
+
+var calcularSubtotal = function() {
+    return this.producto.baseImponible *
+           (1 - this.descuento) *
+           (1 + this.producto.tipoIva) *
+           this.cantidad;
+};
+    
+    
+var Carrito = function() {
+    this.lineas = [];
+    this.agregar = agregar;
+    this.total = calcularTotal;
+};
+    
+var agregar = function(producto, cantidad, descuento) {
+    if (descuento == undefined) {
+        descuento = 0;
+    }
+    var linea = null;
+    for (var i=0; i < this.lineas.length; i++) {
+        var linAct = this.lineas[i];
+        if (linAct.producto.nombre == producto.nombre) {
+            linea = linAct;
+            break;
+        }
+    }
+    if (linea == null) {
+        linea = new Linea(producto, cantidad, descuento);
+        this.lineas.push(linea);
+    } else {
+        lineaActual.cantidad = 
+            lineaActual.cantidad + cantidad;
+    }
+};
+    
+var calcularTotal = function() {
+    var total = 0;
+    for (var i=0; i < this.lineas.length; i++) {
+        var lineaActual = this.lineas[i];
+        var subtotal = lineaActual.subtotal();
+        total = total + subtotal;
+    }
+    return total;
+};
+    
+var c1 = new Producto('Alice', 10, 0.21);    
+var c2 = new Producto('Bob', 8, 0.21);    
+var c3 = new Producto('Charly', 12, 0.21);    
+
+var carrito = new Carrito();
+carrito.agregar(c1, 2);    
+carrito.agregar(c2, 1);
+carrito.agregar(c1, 1);
+    
+console.log('Carrito:', carrito);    
+console.log('T:', carrito.total());    
+    
+    
+    
+</script>    
+</body>
+</html>

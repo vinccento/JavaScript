@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Demo responsive</title>
+
+	<style>
+		.contenedor {
+			max-width : 960px;
+			margin : 0 auto;
+		}
+
+		h1, h2 {
+			color : pink;
+		}
+
+		/* Tablet */
+		@media (min-width : 600px) {			
+			h1, h2 {
+				color : red;
+			}
+			
+			section {
+				width : 33%;
+				float : left;
+			}
+
+		}
+
+		/* desktop */
+		@media(min-width : 1200px) {
+			body {
+				font-size : 1.5em;
+			}
+
+			.contenedor {
+				max-width : 1200px;
+			}
+		}
+
+
+	</style>
+
+</head>
+<body>
+<!--
+	div.contenedor>h1{Demo}+section*3>h2{Caja $}+p{lorem20}
+-->
+
+	<div class="contenedor">	
+		<h1>Demo</h1>
+		
+		<section>
+			<h2>Caja 1</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, tenetur necessitatibus ut fugiat dolores consequatur quis enim suscipit recusandae quos.</p>
+		</section>
+		<section>
+			<h2>Caja 2</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem, nam quo laborum ut dolore minus nobis modi esse molestias dolorem.</p>
+		</section>
+		<section>
+			<h2>Caja 3</h2>
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora, at, voluptate quo a possimus natus iste cumque numquam quisquam doloremque.</p>
+		</section>
+	</div>
+	
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <button>
+        ¡Púlsame! 
+        <img src="http://lorempixel.com/50/50/cats" alt="gatico">
+    </button>
+    
+    <script>
+
+    var boton = document.querySelector('button');
+    var f1 = function() {
+        window.alert('Hola, sexy.');
+    };
+    boton.addEventListener('click', f1, true);
+    
+    document.addEventListener('click', function(evt) {
+        window.alert('So sexy for my body that it hurts.');
+        evt.stopPropagation();
+    }, true);
+        
+    
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    var funcionHablar = function(mensaje) {
+        console.log('%s dice: %s.', this.nombre, mensaje);
+    };
+    
+    var SuperHeroe = function(nombre, fuerza, volar) {
+        console.log('Ejecutando inicialización de súper héroe.');
+        this.nombre = nombre; 
+        this.fuerza = fuerza; 
+        this.volar = volar;
+        this.hablar = funcionHablar;
+    };
+    var lobezno = new SuperHeroe('Lobezno', 60, false);
+        
+    console.log('El superhéroe es %s.', lobezno.nombre);
+        
+    lobezno.hablar('¿Dónde está la cerveza?');    
+        
+        
+    </script>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
