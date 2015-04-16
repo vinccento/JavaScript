@@ -4,17 +4,26 @@ var controlador =  {
     
     pantallaInicial : $('#landingPage'),
     pantallaPregunta : $('#preguntaPage'),
-    
+    cajaPregunta : $('#preguntaPage h1'),
+	
     
     inicializarUI : function() {
         var self = this;
         console.log('Inicializando la UI.', this);
         this.botonCargar.on('click', function() {
             console.log('Pulsado cargar.' , this);
-            self.navegar(self.pantallaPregunta);  
-        });
-        
+            self.mostrarPregunta(); 
+        });        
     },
+	
+	mostrarPregunta : function(){
+		var self = this;
+		var promesa = modelo.obtenerPregunta('hoy');
+		promesa.done(function(datos){
+			self.cajaPregunta.text(datos.texto);
+			self.navegar(self.pantallaPregunta);
+		});
+	},
     
     navegar : function(pantallaDestino) {
         $('.activa').fadeOut(function() {
