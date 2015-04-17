@@ -1,0 +1,16 @@
+﻿1-> Crear endpoinsts para sí & no (POST)
+	http://xxxx/respuestas/hoy/si
+	http://xxxx/respuestas/hoy/no
+
+2-> Fijar listeners botones votación ---> votar()
+
+3-> votar tiene que realizar un post al endpoint correspondiente
+    (modelo)
+	
+4-> Al resolverse la promesa actualizar tabla de resultados
+
+5-> Navegar hasta la pantalla de la tabla	
+
+
+Opcional:
+	Boton de volver.
