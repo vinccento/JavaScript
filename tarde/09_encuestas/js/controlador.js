@@ -1,18 +1,28 @@
 var controlador =  {
   
     botonCargar : $('#cargar'),
+	boton_Si : $('#votarSi'),
+	boton_No : $('#votarNo'),
     
     pantallaInicial : $('#landingPage'),
     pantallaPregunta : $('#preguntaPage'),
+	pantallaResultado : $('#resultadosPage'),
     cajaPregunta : $('#preguntaPage h1'),
     
     inicializarUI : function() {
         var self = this;
         console.log('Inicializando la UI.', this);
-        this.botonCargar.on('click', function() {
+        this.botonCargar.on('click', function(evt) {
+			evt.preventDefault();
             console.log('Pulsado cargar.' , this);
             self.mostrarPregunta();
         });
+		
+		this.boton_Si.on('click', function(evt){
+			evt.preventDefault();
+			console.log('Pulsado boton de si', this);
+			self.mostrarRespuesta_si();
+		});
         
     },
     
@@ -24,6 +34,14 @@ var controlador =  {
             self.navegar(self.pantallaPregunta);
         });
     },
+	
+	mostrarRespuesta_si : function(){
+		var self = this;
+		var promesa = modelo.obtenerRespuesta('hoy', 'si');
+		promesa.done(function(datos){
+			self.navegar(self.pantallaResultado);
+		});
+	},
     
     navegar : function(pantallaDestino) {
         var id = pantallaDestino.attr('id');
