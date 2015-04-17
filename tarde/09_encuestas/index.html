@@ -6,7 +6,7 @@
           content="width=device-width,
                    minimum-scale=1,
                    maximum-scale=1,
-                   user-scalable=no">
+                   user-scalable=no,">
     <title>Encuestas</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -25,7 +25,8 @@
 </head>
 <body>
     <div class="container">
-    <section id="landingPage" class="pantalla activa" data-titulo = "Bienvenida">
+    <section id="landingPage" class="pantalla activa" 
+             data-titulo="Bienvenida">
         <div class="jumbotron">
           <h1>¡ENCUESTAS!</h1>
           <p>No dejes que otros decidan por ti, utiliza
@@ -34,7 +35,7 @@
           <p><a id="cargar" class="btn btn-primary btn-lg" href="#" role="button">Comenzar</a></p>
         </div>              
     </section>
-    <section id="preguntaPage" class="pantalla" data-titulo = "Pregunta">
+    <section id="preguntaPage" class="pantalla">
         <h1 >Aquí aparecerá la pregunta.</h1>
         
         <form class="row">
@@ -43,12 +44,12 @@
                    col-xs-12 col-sm-5">Oh sí!</button>
                    
                    
-            <button id="votarNo" name="no"
+            <button id="votarNi" name="no"
             class="btn btn-lg btn-primary
-                   col-xs-12 col-sm-offset-2 col-sm-5">Nope!</button>
+                   col-xs-12 col-sm-offset-2 col-sm-5">Ni hablar!</button>
         </form>
     </section>
-    <section id="resultadosPage" class="pantalla" data-titulo = "Resultado">
+    <section id="resultadosPage" class="pantalla" >
          <h1>Resultados:</h1>
          <table class="table">
             <tr>
