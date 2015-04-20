@@ -6,7 +6,7 @@
           content="width=device-width,
                    minimum-scale=1,
                    maximum-scale=1,
-                   user-scalable=no,">
+                   user-scalable=no">
     <title>Encuestas</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/bootstrap-theme.min.css">
@@ -44,7 +44,7 @@
                    col-xs-12 col-sm-5">Oh sí!</button>
                    
                    
-            <button id="votarNi" name="no"
+            <button id="votarNo" name="no"
             class="btn btn-lg btn-primary
                    col-xs-12 col-sm-offset-2 col-sm-5">Ni hablar!</button>
         </form>
@@ -56,15 +56,20 @@
                 <th>Respuesta</th><th>Votos</th><th>Porcentaje</th>
             </tr>
             <tr>
-                <td>Sí:</td><td>0</td><td>0%</td>
+                <td>Sí:</td><td id="tableSiAbsoluto">0</td><td id="tableSiRelativo">0%</td>
             </tr>
             <tr>
-                <td>No:</td><td>0</td><td>0%</td>
+                <td>No:</td><td id="tableNobsoluto">0</td><td id="tableNoRelativo">0%</td>
             </tr>
             <tr>
-                <td>Total:</td><td>0</td><td></td>
+                <td>Total:</td><td id="tableTotal">0</td><td></td>
             </tr>
         </table>
+        
+        <button id="volverInicio" name="btnVolver" 
+            class="btn btn-lg btn-primary
+                   col-xs-12 col-sm-5">Volver al Inicio</button>
+        
     </section>
     </div>    
     <script src="js/jquery-2.1.3.min.js"></script>

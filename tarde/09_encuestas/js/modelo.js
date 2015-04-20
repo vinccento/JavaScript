@@ -1,9 +1,7 @@
 var modelo = {
-  
+    
     URL_RECUPERAR_PREGUNTA : 'http://demo8983883.mockable.io/votaciones/{id}',
-	
-	URL_RECUPERAR_RESPUESTAS : 'http://demo2777847.mockable.io/respuestas/{id}/{opcion}',
-	
+	URL_RECUPERAR_RESPUESTAS : 'http://demo2335184.mockable.io/respuestas/{id}/{opcion}',
     
     obtenerPregunta : function(id) {
         
@@ -17,12 +15,11 @@ var modelo = {
         return promesa;
     },
 	
-	obtenerRespuesta: function(id, opcion){
+	obtenerRespuesta : function(id, opcion){
 		var url1 = this.URL_RECUPERAR_RESPUESTAS.replace('{id}', id);
 		var url = url1.replace('{opcion}', opcion);
-		
-		var promesa = $.post(url);
         
+        var promesa = $.post(url);
         promesa.done(function(datos) {
             console.log('Respuesta Recuperada: ', datos);
         });

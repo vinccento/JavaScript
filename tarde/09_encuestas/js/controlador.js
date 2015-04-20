@@ -3,11 +3,19 @@ var controlador =  {
     botonCargar : $('#cargar'),
 	boton_Si : $('#votarSi'),
 	boton_No : $('#votarNo'),
+    botonVolver : $('#volverInicio'),
     
     pantallaInicial : $('#landingPage'),
     pantallaPregunta : $('#preguntaPage'),
 	pantallaResultado : $('#resultadosPage'),
+    
     cajaPregunta : $('#preguntaPage h1'),
+    
+    siAbsoluto : $('#tableSiAbsoluto'),
+    siRelativo : $('#tableSiRelativo'),
+    noAbsoluto : $('#tableNobsoluto'),
+    noRelativo : $('#tableNoRelativo'),
+    tableTotal : $('#tableTotal'),
     
     inicializarUI : function() {
         var self = this;
@@ -20,8 +28,20 @@ var controlador =  {
 		
 		this.boton_Si.on('click', function(evt){
 			evt.preventDefault();
-			console.log('Pulsado boton de si', this);
+			console.log('Pulsado boton de Si', this);
 			self.mostrarRespuesta_si();
+		});
+        
+        this.boton_No.on('click', function(evt){
+			evt.preventDefault();
+			console.log('Pulsado boton de No', this);
+			self.mostrarRespuesta_no();
+		});
+        
+        this.botonVolver.on('click', function(evt){
+			evt.preventDefault();
+			console.log('Pulsado boton de Volver', this);
+			self.navegar(self.pantallaInicial);
 		});
         
     },
@@ -39,9 +59,26 @@ var controlador =  {
 		var self = this;
 		var promesa = modelo.obtenerRespuesta('hoy', 'si');
 		promesa.done(function(datos){
-			self.navegar(self.pantallaResultado);
+            self.formarRespuesta(datos);
 		});
 	},
+    
+    mostrarRespuesta_no : function(){
+		var self = this;
+		var promesa = modelo.obtenerRespuesta('hoy', 'no');
+		promesa.done(function(datos){
+            self.formarRespuesta(datos);
+		});
+	},
+    
+    formarRespuesta : function(datos){
+        this.siAbsoluto.text(datos.respuestas.si.absoluto)
+        this.siRelativo.text((datos.respuestas.si.porcentaje)*100 + '%')
+        this.noAbsoluto.text(datos.respuestas.no.absoluto)
+        this.noRelativo.text((datos.respuestas.no.porcentaje)*100 + '%')
+        this.tableTotal.text(datos.respuestas.Total)
+        this.navegar(this.pantallaResultado);
+    },
     
     navegar : function(pantallaDestino) {
         var id = pantallaDestino.attr('id');
@@ -108,8 +145,7 @@ var controlador =  {
         this.inicializarUI();
         this.inicializarNavegacion();
     }
-    
-    
+ 
 };
 
 
