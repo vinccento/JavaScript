@@ -42,8 +42,7 @@ var controlador =  {
 			evt.preventDefault();
 			console.log('Pulsado boton de Volver', this);
 			self.navegar(self.pantallaInicial);
-		});
-        
+		}); 
     },
     
     mostrarPregunta :  function() {
@@ -88,7 +87,6 @@ var controlador =  {
             pantallaId : id,
             hora : new Date()
         };
-        
         History.pushState(info, title, url);        
     },
     
@@ -128,8 +126,7 @@ var controlador =  {
                 $('.activa').removeClass('activa');
                 pantallaDestino.addClass('activa');
             });
-        });
-        
+        }); 
     },
     
     inicializarNavegacion : function() {  
@@ -145,8 +142,7 @@ var controlador =  {
         this.inicializarUI();
         this.inicializarNavegacion();
     }
- 
-};
+};//Fin var Controlador
 
 
 $(document).on('ready', function() {
