@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<button id="empezar">Empezar</button>
+	<button id="parar">Parar</button>
+	
+	<p id="coords"></p>
+	
+	<script>
+		
+		var cbExito = function(posicion){
+			var info = JSON.stringify(posicion);
+			var p = document.querySelector('#coords');
+			p.innerHTML = info;
+		};
+		
+		var cbFracaso = function(error){
+			var p = document.querySelector('#coords');
+			p.innerHTML = 'Fracaso Absoluto';
+		};
+		
+		var opciones = {
+			enableHighAccuracy: false, 
+			maximumAge        : 1000*60, 
+			timeout           : 1000*60
+		}
+		
+		var numeroWatcher = navigator.geolocation.watchPosition(
+			cbExito, cbFracaso, opciones);
+	</script>
+</body>
+</html>
