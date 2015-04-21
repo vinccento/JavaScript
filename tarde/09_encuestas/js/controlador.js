@@ -16,6 +16,8 @@ var controlador =  {
     noAbsoluto : $('#tableNobsoluto'),
     noRelativo : $('#tableNoRelativo'),
     tableTotal : $('#tableTotal'),
+	
+	loading : $('#loading'),
     
     inicializarUI : function() {
         var self = this;
@@ -136,11 +138,22 @@ var controlador =  {
             self.procesarStateChange();
         });
     },
+	
+	inicializarAjax : function(){
+		var self = this;
+		$(document).ajaxStart(function(){
+			self.loading.fadeIn();
+		});
+		$(document).ajaxStop(function(){
+			self.loading.fadeOut();
+		});
+	},
     
     inicializar : function() {
         console.log('Inicializando sistema.', this);
         this.inicializarUI();
         this.inicializarNavegacion();
+		this.inicializarAjax();
     }
 };//Fin var Controlador
 
