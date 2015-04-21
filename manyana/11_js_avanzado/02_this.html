@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        window.saludar = function(mensaje, color) {
+            var p = document.createElement('p');
+            p.innerHTML = mensaje;
+            console.log('this: ', this);
+            p.style.color = color;
+            document.body.appendChild(p);
+        };
+        
+        window.saludar('Hola', 'blue');
+    
+        window.bindedSaludar = saludar.bind(document);
+        window.bindedSaludar('Adios', 'red');
+        
+        saludar.apply(document, ['Qué tal', 'green']);
+        saludar.call(document, 'Todo bin', 'orange');
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    
+    
+    
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		
+		var avisar = function(mensaje){
+			console.log('Mensaje', mensaje);
+			console.log('This', this);
+		};
+		
+		
+		window.avisar('1');
+		window.avisar.apply('Hola', [2, 3, 4, 5]);
+		window.avisar.call('Adios', 3, 4, 5);
+		
+		//Solo los function tienen propiedad prototype.
+	
+	
+	
+	
+	
+	</script>
+	
+</body>
+</html>

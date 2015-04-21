@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var Persona = function(nombre, peso) {
+            this.nombre = nombre;
+            this.peso = peso;
+        };
+        
+        Persona.prototype.saludar = function() {
+            console.log('Hola');
+        };
+        
+        
+        var alice = new Persona('Alice', 70);
+        alice.saludar();
+        var bob = new Persona('Bob', 55);
+        bob.saludar();
+        
+        
+    
+    </script>
+    
+</body>
+</html>
